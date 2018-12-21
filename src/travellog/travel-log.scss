@@ -1,0 +1,45 @@
+$black: #282e34;
+
+.travel-log {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-monospace);
+  color: white;
+  background: $black;
+  & h1 {
+    display: inline-block;
+    margin-right: 1.5em;
+  }
+  & button {
+    font-size: .69em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1366px;
+  padding: 1em;
+}
+
+.log-panel {
+  max-width: 320px;
+  font-size: .5em;
+  padding: .5em;
+}
+
+.log-list {
+  list-style: none;
+  width: 85%;
+  margin: 0;
+  padding: 0;
+  & li::before {
+    content: '>  ';
+    color: lightblue;
+  }
+}

@@ -1,0 +1,48 @@
+.rover {
+  &::after {
+    position: absolute;
+    content: '\21e1';
+    text-align: center;
+    color: white;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.rover-1 {
+  &::after {
+    background: $rover-1;
+  }
+}
+.rover-2 {
+  &::after {
+    background: $rover-2;
+  }
+}
+.rover-3 {
+  &::after {
+    background: $rover-3;
+  }
+}
+.rover-4 {
+  &::after {
+    background: $rover-4;
+  }
+}
+
+.rover-n {
+  transform: rotate(0deg);
+}
+.rover-e {
+  transform: rotate(90deg);
+}
+.rover-s {
+  transform: rotate(180deg);
+}
+.rover-w {
+  transform: rotate(-90deg);
+}

@@ -1,0 +1,141 @@
+:root {
+  /* Font */
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --font-base-size: 19px;
+  /* Sizes */
+  --text-xxs: .512em;
+  --text-xs: .64em;
+  --text-sm: .8em;
+  --text-md: 1em;
+  --text-lg: 1.25em;
+  --text-xl: 1.5625em;
+  --text-xxl: 1.95em;
+  --text-xxxl: 2.55em;
+}
+
+body {
+  font-family: var(--font-system);
+  font-size: var(--font-base-size);
+  font-weight: 400;
+  line-height: 1.55;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  counter-reset: topic;
+}
+
+.text-xxs {
+  font-size: var(--text-xxs);
+  line-height: 1.65;
+  margin-bottom: var(--text-xs);
+}
+
+h6,
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: 1.65;
+  margin-bottom: var(--text-sm);
+}
+
+h5,
+.heading-sm,
+.text-sm {
+  font-size: var(--text-sm);
+  margin-bottom: var(--text-md);
+}
+
+.text-md {
+  font-size: var(--text-md);
+  margin-bottom: var(--text-lg);
+}
+
+h4,
+.text-lg,
+.minitopic {
+  font-size: var(--text-lg);
+  line-height: 1.4;
+  margin-bottom: var(--text-xl);
+}
+
+h4,
+h4.minitopic {
+  margin-bottom: calc(var(--text-xl) / 1.4);
+}
+
+h2,
+h3,
+.text-xl,
+.subtopic {
+  font-size: var(--text-xl);
+  line-height: 1.33;
+  margin-bottom: var(--text-xxl);
+}
+h2,
+h3,
+h2.subtopic,
+h3.subtopic {
+  margin-bottom: calc(var(--text-xxl) / 1.33);
+}
+
+h1,
+.text-xxl,
+.topic {
+  font-size: var(--text-xxl);
+  line-height: 1.25;
+  margin-bottom: var(--text-xxxl);
+}
+h1,
+h1.topic {
+  margin-bottom: calc(var(--text-xxl) / 1.25);
+}
+
+.text-xxxl {
+  font-size: var(--text-xxxl);
+  line-height: 1.15;
+  margin-bottom: calc(var(--text-xxxl) / 1.15);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+.topic.oh {
+  counter-reset: subtopic;
+}
+.subtopic.oh {
+  counter-reset: minitopic;
+}
+.topic.oh::before {
+  counter-increment: topic;
+  content: counter(topic) ". "
+}
+.subtopic.oh::before {
+  counter-increment: subtopic;
+  content: counter(topic) "." counter(subtopic) ". "
+}
+.minitopic.oh::before {
+  counter-increment: minitopic;
+  content: counter(topic) "." counter(subtopic) "."counter(minitopic) ". "
+}
+
+.text-indent {
+  text-indent: var(--text-md);
+}
+.topic.oh.text-indent {
+  text-indent: 0;
+}
+.minitopic.oh.text-indent {
+  text-indent: var(--text-xxl);
+}
+
+.text-center {
+  text-align: center;
+}
